@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template: 
+    "header header header header" 50px
+    "left_menu main settings icons" 1fr /
+    200px 1fr 200px 70px;
+
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: rgba(255, 0, 0, 0.404);
+}
+
+.left_menu {
+    grid-area: left_menu;
+    display: grid;
+    grid-template:
+    "left_nav" 1fr
+    "meet" 150px
+    "chat" 100px /
+    1fr;
+}
+
+.left_nav {
+    grid-area: left_nav;
+    background-color: rgba(0, 0, 255, 0.45);
+}
+
+.meet {
+    grid-area: meet;
+    background-color: azure;
+}
+
+.chat {
+    grid-area: chat;
+    background-color: plum;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template:
+    "tools" 40px
+    "emails" 1fr /
+    1fr;
+}
+
+.tools {
+    grid-area: tools;
+    background-color: rgba(255, 0, 255, 0.573);
+}
+
+.emails {
+    grid-area: emails;
+    background-color: rgba(65, 105, 225, 0.539);
+}
+
+.settings {
+    grid-area: settings;
+    background-color: rgba(0, 128, 128, 0.585);
+}
+
+.icons {
+    grid-area: icons;
+    background-color: rgba(46, 139, 86, 0.594);
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        grid-template: 
+        "header header header" 50px
+        "left_menu main settings" 1fr /
+        200px 1fr 200px;
+    }
+
+    .icons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        grid-template: 
+        "header header header" 50px
+        "left_menu main settings" 1fr /
+        100px 1fr 100px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        grid-template: 
+        "header header" 50px
+        "left_menu main" 1fr /
+        100px 1fr;
+    }
+
+    .settings {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        grid-template: 
+        "header" 30px
+        "main" 1fr /
+        1fr;
+    }
+
+    .left_menu {
+        display: none;
+    }
+
+}
